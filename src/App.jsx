@@ -9,18 +9,9 @@ import Reviews from './sections/Reviews';
 import Footer from './sections/Footer';
 
 const App = () => {
-  const [activeArtistId, setActiveArtistId] = useState(1);
+  const [activeArtistId, setActiveArtistId] = useState(2);
 
   const artistsData = [
-    {
-      id: 1,
-      name: 'Igão',
-      imageKey: 'igao',
-      experience: '7 anos, especializado em realismo sombrio',
-      technique: 'Preto & Cinza • Pontilhismo • Dark',
-      rank: 'Especialista',
-      bio: 'Igão é um especialista em Preto & Cinza e estética Dark. Seu trabalho impressiona pelo uso magistral de sombras e pontilhismo para criar obras de arte com uma atmosfera densa, realista e cheia de atitude.',
-    },
     {
       id: 2,
       name: 'Napa',
@@ -38,6 +29,15 @@ const App = () => {
       technique: 'Realismo • Pontilhismo • Lettering',
       rank: 'Sênior',
       bio: 'Lucas possui uma precisão cirúrgica em suas obras, misturando realismo com pontilhismo e finalizando com lettering impecável. É a escolha perfeita para tatuagens de alta complexidade técnica.',
+    },
+    {
+      id: 1,
+      name: 'Igão',
+      imageKey: 'igao',
+      experience: '7 anos, especializado em realismo sombrio',
+      technique: 'Preto & Cinza • Pontilhismo • Dark',
+      rank: 'Especialista',
+      bio: 'Igão é um especialista em Preto & Cinza e estética Dark. Seu trabalho impressiona pelo uso magistral de sombras e pontilhismo para criar obras de arte com uma atmosfera densa, realista e cheia de atitude.',
     },
   ];
 
