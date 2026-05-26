@@ -37,7 +37,7 @@ const App = () => {
       experience: '7 anos, especializado em realismo sombrio',
       technique: 'Preto & Cinza • Pontilhismo • Dark',
       rank: 'Especialista',
-      bio: 'Igão é um especialista em Preto & Cinza e estética Dark. Seu trabalho impressiona pelo uso magistral de sombras e pontilhismo para criar obras de arte com uma atmosfera densa, realista e cheia de atitude.',
+      bio: 'Igão é co-fundador do Vaidade Studio e um especialista em Preto & Cinza e estética Dark. Seu trabalho impressiona pelo uso magistral de sombras e pontilhismo para criar obras de arte com uma atmosfera densa, realista e cheia de atitude.',
     },
     {
       id: 4,
