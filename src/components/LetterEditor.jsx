@@ -1,31 +1,37 @@
 import React, { useState, useEffect } from 'react';
 
 const LetterEditor = () => {
-  // Initial state for 6 letters: [x%, y%, zoomX%, zoomY%]
-  const [styles, setStyles] = useState([
+  const defaultStyles = [
     { x: 50, y: 40, zoomX: 100, zoomY: 100 },
     { x: 50, y: 60, zoomX: 100, zoomY: 100 },
     { x: 50, y: 30, zoomX: 100, zoomY: 100 },
     { x: 50, y: 20, zoomX: 100, zoomY: 100 },
     { x: 50, y: 35, zoomX: 100, zoomY: 100 },
     { x: 50, y: 25, zoomX: 100, zoomY: 100 },
-  ]);
+  ];
+
+  // Initialize from localStorage if present
+  const [styles, setStyles] = useState(() => {
+    const saved = localStorage.getItem('tattoo-letter-styles');
+    return saved ? JSON.parse(saved) : defaultStyles;
+  });
 
   const [isOpen, setIsOpen] = useState(true);
+  const [copied, setCopied] = useState(false);
 
-  // Apply CSS variables to the document root whenever styles change
+  // Apply CSS variables and save to localStorage whenever styles change
   useEffect(() => {
     styles.forEach((style, index) => {
       const idx = index + 1;
       document.documentElement.style.setProperty(`--pos-${idx}`, `${style.x}% ${style.y}%`);
       
-      // If both are 100%, we default to 'cover', otherwise output explicit width/height %
       const sizeVal = (style.zoomX === 100 && style.zoomY === 100)
         ? 'cover'
         : `${style.zoomX}% ${style.zoomY}%`;
         
       document.documentElement.style.setProperty(`--size-${idx}`, sizeVal);
     });
+    localStorage.setItem('tattoo-letter-styles', JSON.stringify(styles));
   }, [styles]);
 
   const updateStyle = (index, field, value) => {
@@ -40,6 +46,20 @@ const LetterEditor = () => {
     newStyles[index].zoomX = 100;
     newStyles[index].zoomY = 100;
     setStyles(newStyles);
+  };
+
+  // Copy configurations JSON to clipboard for the AI agent
+  const handleExport = () => {
+    const configStr = JSON.stringify(styles, null, 2);
+    navigator.clipboard.writeText(configStr)
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      })
+      .catch((err) => {
+        console.error('Could not copy text: ', err);
+        alert('Configurações:\n' + configStr);
+      });
   };
 
   if (!isOpen) {
@@ -80,7 +100,7 @@ const LetterEditor = () => {
       </div>
       
       <p style={{ fontSize: '12px', color: '#aaa', marginBottom: '15px', lineHeight: '1.4' }}>
-        Ajuste a posição e o zoom horizontal/vertical de cada foto para cobrir perfeitamente as curvas das letras (especialmente T e A).
+        Ajuste a posição e o zoom horizontal/vertical de cada foto. Suas alterações são salvas localmente no navegador!
       </p>
 
       {['T (Tigre)', 'A (Samurai)', 'T (Minato)', 'T (Toji)', 'O (Espartano)', 'O (Tanjiro)'].map((letter, i) => (
@@ -122,8 +142,19 @@ const LetterEditor = () => {
         </div>
       ))}
       
-      <div style={{ marginTop: '20px', fontSize: '11px', color: '#888', lineHeight: '1.3' }}>
-        * Dica: Se alguma letra mostrar espaço transparente, aumente o Zoom X ou Zoom Y até preencher o desenho por completo!
+      <button 
+        onClick={handleExport}
+        style={{
+          width: '100%', padding: '10px', background: 'var(--accent, #ccff00)', color: '#000',
+          fontWeight: 'bold', border: 'none', borderRadius: '6px', cursor: 'pointer', marginTop: '10px',
+          boxShadow: '0 2px 6px rgba(204, 255, 0, 0.2)', transition: 'background 0.2s'
+        }}
+      >
+        {copied ? 'Copiado!' : 'Copiar Configurações (Enviar p/ IA)'}
+      </button>
+
+      <div style={{ marginTop: '15px', fontSize: '11px', color: '#888', lineHeight: '1.3' }}>
+        * Quando terminar de enquadrar, clique em <strong>Copiar Configurações</strong> e cole no chat para eu salvar permanentemente no código!
       </div>
     </div>
   );
