@@ -208,10 +208,6 @@
     -webkit-text-stroke: 0px transparent;
   }
 
-  .smokeVideo {
-    object-fit: contain;
-  }
-
   .exploreIndicator {
     left: 50%;
     transform: translateX(-50%);
