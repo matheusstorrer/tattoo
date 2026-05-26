@@ -85,37 +85,37 @@
 /* Adjust letters back-images slightly for unique texture placements */
 .letter:nth-child(1) {
   background-image: url('../assets/gallery_tiger.png');
-  background-position: var(--pos-1, center 40%);
-  background-size: var(--size-1, cover);
+  background-position: var(--pos-1, 40% 24%);
+  background-size: var(--size-1, 141% 139%);
 }
 .letter:nth-child(2) {
   background-image: url('../assets/gallery_samurai.png');
-  background-position: var(--pos-2, center 60%);
-  background-size: var(--size-2, cover);
+  background-position: var(--pos-2, 4% 60%);
+  background-size: var(--size-2, 175% 177%);
   animation-delay: -1s;
 }
 .letter:nth-child(3) {
   background-image: url('../assets/gallery_minato.jpg');
-  background-position: var(--pos-3, center 30%);
-  background-size: var(--size-3, cover);
+  background-position: var(--pos-3, 95% 30%);
+  background-size: var(--size-3, 209% 213%);
   animation-delay: -2s;
 }
 .letter:nth-child(4) {
   background-image: url('../assets/gallery_toji.jpg');
-  background-position: var(--pos-4, center 20%);
-  background-size: var(--size-4, cover);
+  background-position: var(--pos-4, 9% 20%);
+  background-size: var(--size-4, 129% 139%);
   animation-delay: -3s;
 }
 .letter:nth-child(5) {
   background-image: url('../assets/gallery_spartan.png');
-  background-position: var(--pos-5, center 35%);
-  background-size: var(--size-5, cover);
+  background-position: var(--pos-5, 60% 39%);
+  background-size: var(--size-5, 257% 251%);
   animation-delay: -4s;
 }
 .letter:nth-child(6) {
   background-image: url('../assets/gallery_tanjiro.jpg');
-  background-position: var(--pos-6, center 25%);
-  background-size: var(--size-6, cover);
+  background-position: var(--pos-6, 56% 25%);
+  background-size: var(--size-6, 201% 205%);
   animation-delay: -5s;
 }
 

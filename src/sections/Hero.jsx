@@ -1,14 +1,9 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import styles from './Hero.module.css';
-import LetterEditor from '../components/LetterEditor';
-
 const Hero = () => {
   return (
     <section className={styles.hero}>
-      {/* Dev Editor */}
-      <LetterEditor />
-
       {/* Dark background overlays */}
       <div className={styles.overlay} />
       
