@@ -44,7 +44,7 @@ const App = () => {
       name: 'ink.will',
       imageKey: 'inkwill',
       experience: '10 anos, especializado em múltiplos estilos',
-      technique: 'Realismo • Blackwork • Fine Line',
+      technique: 'Lettering • Blackwork',
       rank: 'Mestre',
       bio: 'ink.will é co-fundador do Vaidade Studio e um artista completo com domínio de diversas técnicas. Sua versatilidade e visão artística elevam cada projeto, transformando ideias em obras de arte únicas na pele.',
     },
