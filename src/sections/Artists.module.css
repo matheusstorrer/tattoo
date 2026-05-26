@@ -1,0 +1,339 @@
+.artists {
+  width: 100%;
+  padding: 8rem 0;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+  text-align: left;
+  position: relative;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+.desktopLayout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.artistsList {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--border-color);
+}
+
+.artistNameItem {
+  position: relative;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+}
+
+.artistNameText {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.activeIndicator {
+  position: absolute;
+  left: -1px;
+  top: 0;
+  width: 2px;
+  height: 0;
+  background-color: var(--accent);
+  transition: height 0.3s ease;
+}
+
+.artistNameItem:hover .artistNameText,
+.activeNameItem .artistNameText {
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--border-glow);
+  transform: translateX(10px);
+}
+
+.artistNameItem:hover .activeIndicator,
+.activeNameItem .activeIndicator {
+  height: 100%;
+}
+
+/* Detail panel card layout */
+.detailsPanel {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 4px;
+}
+
+.detailsCard {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.imageColumn {
+  width: 100%;
+  aspect-ratio: 0.85;
+  background-color: var(--bg-tertiary);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.artistImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.1) brightness(0.9);
+  transition: all 0.5s ease;
+}
+
+.detailsCard:hover .artistImage {
+  filter: grayscale(0.6) contrast(1.15) brightness(0.95);
+  transform: scale(1.03);
+}
+
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.statItem {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.statLabel {
+  color: var(--text-secondary);
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.statVal {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.bio {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.actionBtnPrimary {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+  border: 1px solid var(--accent);
+  padding: 0.8rem 1.8rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  transition: all 0.3s ease;
+}
+
+.actionBtnPrimary:hover {
+  background-color: transparent;
+  color: var(--accent);
+  box-shadow: 0 0 15px var(--border-glow);
+}
+
+.actionBtnSecondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.8rem 1.8rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  transition: all 0.3s ease;
+}
+
+.actionBtnSecondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Mobile Viewports styling */
+.mobileLayout {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.accordionItem {
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.accordionHeader {
+  width: 100%;
+  padding: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+}
+
+.accordionHeaderOpen {
+  color: var(--accent);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.accordionIcon {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.accordionCollapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordionCollapseOpen {
+  max-height: 1000px; /* Big enough fallback */
+}
+
+.accordionContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+.mobileArtistImage {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 0.85;
+  object-fit: cover;
+  filter: grayscale(0.8);
+  border: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+}
+
+.mobileStats {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.mobileStatItem {
+  color: var(--text-secondary);
+}
+
+.mobileStatItem strong {
+  color: var(--text-primary);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+}
+
+.mobileBio {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.mobileActions {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.mobileBtnPrimary,
+.mobileBtnSecondary {
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.mobileBtnPrimary {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+}
+
+.mobileBtnSecondary {
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+/* Toggle Views responsive rule */
+@media (max-width: 768px) {
+  .desktopLayout {
+    display: none;
+  }
+  .mobileLayout {
+    display: flex;
+  }
+}

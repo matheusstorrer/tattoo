@@ -1,0 +1,344 @@
+.form {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+}
+
+.input,
+.select,
+.textarea,
+.customPickerTrigger {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus,
+.customPickerTrigger:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px var(--border-glow);
+}
+
+.selectWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 2.5rem;
+}
+
+.selectIcon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.customPickerTrigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pickerIcon {
+  color: var(--text-secondary);
+}
+
+.customPickerDropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 100%;
+  min-width: 280px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 1rem;
+  z-index: 100;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.pickerTitle {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendarDay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.calendarDay:hover {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+  font-weight: 600;
+}
+
+.selectedDay {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+  font-weight: 700;
+}
+
+.hoursGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.hourSlot {
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.hourSlot:hover {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+  border-color: var(--accent);
+}
+
+.selectedHour {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+  border-color: var(--accent);
+}
+
+.textarea {
+  resize: vertical;
+}
+
+/* Right column uploadzone styling */
+.uploadContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.uploadTitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.dropzone {
+  flex-grow: 1;
+  min-height: 250px;
+  border: 2px dashed var(--border-color);
+  border-radius: 4px;
+  background-color: rgba(20, 20, 20, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.dropzone:hover,
+.dropzoneActive {
+  border-color: var(--accent);
+  background-color: rgba(204, 255, 0, 0.03);
+}
+
+.dropzoneFilled {
+  border-style: solid;
+  border-color: var(--accent);
+  background-color: rgba(204, 255, 0, 0.05);
+}
+
+.uploadPrompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.uploadIcon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.fileLabel {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.fileLabel:hover {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+  border-color: var(--accent);
+}
+
+.fileInput {
+  display: none;
+}
+
+.fileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fileName {
+  font-weight: 600;
+  font-size: 1rem;
+  word-break: break-all;
+}
+
+.fileSize {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.removeFileBtn {
+  background: none;
+  border: none;
+  color: #ff3b30;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.removeFileBtn:hover {
+  text-decoration: underline;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 1.2rem;
+  background-color: transparent;
+  border: 1px solid var(--text-primary);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent);
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+.submitBtn:hover::before {
+  left: 0;
+}
+
+.submitBtn span {
+  position: relative;
+  z-index: 2;
+  transition: color 0.4s ease;
+}
+
+.submitBtn:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px var(--border-glow);
+}
+
+.submitBtn:hover span {
+  color: var(--bg-primary);
+}

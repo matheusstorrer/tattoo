@@ -1,0 +1,322 @@
+.services {
+  width: 100%;
+  padding: 8rem 0;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+  text-align: left;
+  position: relative;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.servicesSelection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.serviceItem {
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  padding: 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.serviceTitle {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.serviceDescWrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), margin-top 0.4s ease;
+}
+
+.descOpen {
+  max-height: 150px;
+  margin-top: 1rem;
+}
+
+.serviceDesc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+.activeServiceItem {
+  border-color: var(--accent);
+  box-shadow: 0 5px 15px rgba(204, 255, 0, 0.05);
+}
+
+.activeServiceItem .serviceTitle {
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--border-glow);
+}
+
+/* Right Content Panel Layout */
+.contentPanel {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 2.5rem;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sketchesContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tabsHeader {
+  display: flex;
+  gap: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tabBtn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  padding-bottom: 0.5rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.tabBtn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.activeTab {
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--border-glow);
+}
+
+.activeTab::after {
+  width: 100%;
+}
+
+.tabContent {
+  flex-grow: 1;
+}
+
+/* Sketches Carousel horizontal sliding styles */
+.sketchesCarousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1.5rem;
+  scrollbar-width: thin;
+}
+
+.sketchesCarousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.sketchCard {
+  flex-shrink: 0;
+  width: 180px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.sketchCard:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+}
+
+.sketchImageWrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: white; /* Sketches look nice on clean white background inside cards */
+  overflow: hidden;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+
+.sketchImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sketchTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+}
+
+/* Neural Net Styles */
+.neuralContainer {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  text-align: left;
+}
+
+.neuralTextContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.neuralHeader {
+  font-size: 1.25rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.neuralParagraph {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+.neuralImageWrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.neuralImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.1) brightness(0.9);
+}
+
+/* Other Services Standard Detail Styling */
+.serviceDetailCard {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.serviceDetailText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.serviceDetailText h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.serviceDetailParagraph {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  font-weight: 300;
+}
+
+.serviceDetailAddInfo {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-weight: 300;
+  border-left: 2px solid var(--border-color);
+  padding-left: 1.5rem;
+}
+
+.detailBookBtn {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+  border: 1px solid var(--accent);
+  padding: 0.85rem 2.2rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.detailBookBtn:hover {
+  background-color: transparent;
+  color: var(--accent);
+  box-shadow: 0 0 15px var(--border-glow);
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .contentPanel {
+    min-height: auto;
+  }
+
+  .neuralContainer {
+    grid-template-columns: 1fr;
+  }
+}
