@@ -4,6 +4,7 @@ import styles from './Artists.module.css';
 import igaoImg from '../assets/artist_igao.jpg';
 import napaImg from '../assets/artist_napa.png';
 import lucasImg from '../assets/artist_lucas.png';
+import inkwillImg from '../assets/founder_inkwill.jpg';
 
 const Artists = ({ artistsData, activeArtistId, setActiveArtistId }) => {
   const [expandedId, setExpandedId] = useState(artistsData[0].id);
@@ -16,7 +17,8 @@ const Artists = ({ artistsData, activeArtistId, setActiveArtistId }) => {
   const imagesMap = {
     igao: igaoImg,
     napa: napaImg,
-    lucas: lucasImg
+    lucas: lucasImg,
+    inkwill: inkwillImg
   };
 
   const activeArtist = artistsData.find(a => a.id === activeArtistId) || artistsData[0];

@@ -39,6 +39,15 @@ const App = () => {
       rank: 'Especialista',
       bio: 'Igão é um especialista em Preto & Cinza e estética Dark. Seu trabalho impressiona pelo uso magistral de sombras e pontilhismo para criar obras de arte com uma atmosfera densa, realista e cheia de atitude.',
     },
+    {
+      id: 4,
+      name: 'ink.will',
+      imageKey: 'inkwill',
+      experience: '10 anos, especializado em múltiplos estilos',
+      technique: 'Realismo • Blackwork • Fine Line',
+      rank: 'Mestre',
+      bio: 'ink.will é co-fundador do Vaidade Studio e um artista completo com domínio de diversas técnicas. Sua versatilidade e visão artística elevam cada projeto, transformando ideias em obras de arte únicas na pele.',
+    },
   ];
 
   return (
