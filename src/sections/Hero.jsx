@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section className={styles.hero}>
       {/* Dev Editor */}
-      {import.meta.env.DEV && <LetterEditor />}
+      <LetterEditor />
 
       {/* Dark background overlays */}
       <div className={styles.overlay} />
