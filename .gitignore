@@ -27,3 +27,5 @@ dist-ssr
 .agent/
 .claude/
 CProjetostattoo.claude/
+
+.vercel

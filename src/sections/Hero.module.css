@@ -205,6 +205,11 @@
 
   .letter {
     font-size: 13vh; /* Scale with vertical viewport height for a clean vertical stack */
+    -webkit-text-stroke: 0px transparent;
+  }
+
+  .smokeVideo {
+    object-fit: contain;
   }
 
   .exploreIndicator {
